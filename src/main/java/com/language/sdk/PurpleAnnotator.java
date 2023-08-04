@@ -24,13 +24,12 @@ public class PurpleAnnotator implements Annotator {
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
 
         // Ensure the PSI Element is an expression
-//        if (!(element instanceof PsiLiteralExpression literalExpression)) {
-        if (false) {
+        if (!(element instanceof PsiLiteralExpression)) {
             return;
         }
-        PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
 
-// Ensure the Psi element contains a string that starts with the prefix and separator
+        // Ensure the Psi element contains a string that starts with the prefix and separator
+        PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
         String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
         if (value == null || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) {
             return;
