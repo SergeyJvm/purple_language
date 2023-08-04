@@ -11,10 +11,20 @@
   elementTypeHolderClass="com.language.sdk.psi.PurpleTypes"
   elementTypeClass="com.language.sdk.psi.PurpleElementType"
   tokenTypeClass="com.language.sdk.psi.PurpleTokenType"
+
+  psiImplUtilClass="com.language.sdk.psi.impl.PurplePsiImplUtil"
 }
 
 simpleFile ::= item_*
 
 private item_ ::= (property|COMMENT|CRLF)
 
-property ::= (KEY? SEPARATOR VALUE?) | KEY
+property ::= (KEY? SEPARATOR VALUE?) | KEY {
+  pin=3
+  recoverWhile="recover_property"
+  mixin="com.language.sdk.psi.impl.PurpleNamedElementImpl"
+  implements="com.language.sdk.psi.PurpleNamedElement"
+  methods=[getKey getValue getName setName getNameIdentifier getPresentation]
+}
+
+private recover_property ::= !(KEY|SEPARATOR|COMMENT)
