@@ -1,0 +1,33 @@
+<idea-plugin>
+    <id>com.language.purple</id>
+    <name>Purple Language</name>
+    <vendor email="" url="">PurpleCompany</vendor>
+
+    <description><![CDATA[
+    Puple Plugin.<br>
+    <em>Hello friend welcome to our project</em>
+    ]]></description>
+
+    <!-- please see https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <fileType name="Purple Language"
+                  implementationClass="com.language.sdk.PurpleFileType"
+                  fieldName="INSTANCE"
+                  language="Purple"
+                  extensions="purple"/>
+        <lang.parserDefinition
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleParserDefinition"/>
+        <lang.syntaxHighlighterFactory
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleSyntaxHighlighterFactory"/>
+        <colorSettingsPage implementation="com.language.sdk.PurpleColorSettingsPage"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>

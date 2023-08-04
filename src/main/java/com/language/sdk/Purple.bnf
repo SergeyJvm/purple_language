@@ -1,0 +1,20 @@
+{
+  parserClass="com.language.sdk.PurpleParser"
+
+  extends="com.intellij.extapi.psi.ASTWrapperPsiElement"
+
+  psiClassPrefix="Purple"
+  psiImplClassSuffix="Impl"
+  psiPackage="com.language.psi"
+  psiImplPackage="com.language.sdk.psi.impl"
+
+  elementTypeHolderClass="com.language.sdk.psi.PurpleTypes"
+  elementTypeClass="com.language.sdk.psi.PurpleElementType"
+  tokenTypeClass="com.language.sdk.psi.PurpleTokenType"
+}
+
+simpleFile ::= item_*
+
+private item_ ::= (property|COMMENT|CRLF)
+
+property ::= (KEY? SEPARATOR VALUE?) | KEY
