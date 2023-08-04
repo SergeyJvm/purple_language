@@ -17,8 +17,8 @@ import java.util.List;
 public class PurpleAnnotator implements Annotator {
 
     // Define strings for the Simple language prefix - used for annotations, line markers, etc.
-    public static final String SIMPLE_PREFIX_STR = "simple";
-    public static final String SIMPLE_SEPARATOR_STR = ":";
+    public static final String PURPLE_PREFIX_STR = "purple";
+    public static final String PURPLE_SEPARATOR_STR = ":";
 
     @Override
     public void annotate(@NotNull final PsiElement element, @NotNull AnnotationHolder holder) {
@@ -31,15 +31,15 @@ public class PurpleAnnotator implements Annotator {
         // Ensure the Psi element contains a string that starts with the prefix and separator
         PsiLiteralExpression literalExpression = (PsiLiteralExpression) element;
         String value = literalExpression.getValue() instanceof String ? (String) literalExpression.getValue() : null;
-        if (value == null || !value.startsWith(SIMPLE_PREFIX_STR + SIMPLE_SEPARATOR_STR)) {
+        if (value == null || !value.startsWith(PURPLE_PREFIX_STR + PURPLE_SEPARATOR_STR)) {
             return;
         }
 
         // Define the text ranges (start is inclusive, end is exclusive)
-        // "simple:key"
+        // "purple:key"
         //  01234567890
-        TextRange prefixRange = TextRange.from(element.getTextRange().getStartOffset(), SIMPLE_PREFIX_STR.length() + 1);
-        TextRange separatorRange = TextRange.from(prefixRange.getEndOffset(), SIMPLE_SEPARATOR_STR.length());
+        TextRange prefixRange = TextRange.from(element.getTextRange().getStartOffset(), PURPLE_PREFIX_STR.length() + 1);
+        TextRange separatorRange = TextRange.from(prefixRange.getEndOffset(), PURPLE_SEPARATOR_STR.length());
         TextRange keyRange = new TextRange(separatorRange.getEndOffset(), element.getTextRange().getEndOffset() - 1);
 
         // highlight "simple" prefix and ":" separator
@@ -50,7 +50,7 @@ public class PurpleAnnotator implements Annotator {
 
 
         // Get the list of properties for given key
-        String key = value.substring(SIMPLE_PREFIX_STR.length() + SIMPLE_SEPARATOR_STR.length());
+        String key = value.substring(PURPLE_PREFIX_STR.length() + PURPLE_SEPARATOR_STR.length());
         List<PurpleProperty> properties = PurpleUtil.findProperties(element.getProject(), key);
         if (properties.isEmpty()) {
             holder.newAnnotation(HighlightSeverity.ERROR, "Unresolved property")
