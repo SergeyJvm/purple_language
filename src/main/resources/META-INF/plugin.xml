@@ -34,6 +34,12 @@
         <completion.contributor
             language="Purple"
             implementationClass="com.language.sdk.PurpleCompletionContributor"/>
+        <psi.referenceContributor
+            language="JAVA"
+            implementation="com.language.sdk.PurpleReferenceContributor"/>
+        <lang.refactoringSupport
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleRefactoringSupportProvider"/>
     </extensions>
 
     <actions>
