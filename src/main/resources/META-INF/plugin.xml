@@ -31,6 +31,9 @@
         <codeInsight.lineMarkerProvider
             language="JAVA"
             implementationClass="com.language.sdk.PurpleLineMarkerProvider"/>
+        <completion.contributor
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleCompletionContributor"/>
     </extensions>
 
     <actions>
