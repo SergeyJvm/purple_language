@@ -28,6 +28,9 @@
         <colorSettingsPage implementation="com.language.sdk.PurpleColorSettingsPage"/>
         <annotator language="JAVA"
                    implementationClass="com.language.sdk.PurpleAnnotator"/>
+        <codeInsight.lineMarkerProvider
+            language="JAVA"
+            implementationClass="com.language.sdk.PurpleLineMarkerProvider"/>
     </extensions>
 
     <actions>
