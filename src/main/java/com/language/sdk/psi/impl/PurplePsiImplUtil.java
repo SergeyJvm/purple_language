@@ -48,11 +48,7 @@ public class PurplePsiImplUtil {
 
     public static PsiElement getNameIdentifier(PurpleProperty element) {
         ASTNode keyNode = element.getNode().findChildByType(PurpleTypes.KEY);
-        if (keyNode != null) {
-            return keyNode.getPsi();
-        } else {
-            return null;
-        }
+        return keyNode != null ? keyNode.getPsi() : null;
     }
 
     public static ItemPresentation getPresentation(final PurpleProperty element) {
