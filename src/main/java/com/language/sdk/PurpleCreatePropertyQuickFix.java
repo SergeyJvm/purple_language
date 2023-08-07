@@ -55,6 +55,10 @@ class PurpleCreatePropertyQuickFix extends BaseIntentionAction {
             IncorrectOperationException {
         ApplicationManager.getApplication().invokeLater(() -> {
             Collection<VirtualFile> virtualFiles =
+                    //TODO ERROR - m.intellij.util.SlowOperations - Slow operations are prohibited on EDT.
+                    // See SlowOperations.assertSlowOperationsAreAllowed javadoc.
+                    // java.lang.Throwable: Slow operations are prohibited on EDT.
+                    // See SlowOperations.assertSlowOperationsAreAllowed javadoc.
                     FileTypeIndex.getFiles(PurpleFileType.INSTANCE, GlobalSearchScope.allScope(project));
             if (virtualFiles.size() == 1) {
                 createProperty(project, virtualFiles.iterator().next());
