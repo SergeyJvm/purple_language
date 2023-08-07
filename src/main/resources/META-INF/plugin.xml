@@ -50,6 +50,15 @@
         <lang.psiStructureViewFactory
             language="Purple"
             implementationClass="com.language.sdk.PurpleStructureViewFactory"/>
+        <navbar implementation="com.language.sdk.PurpleStructureAwareNavbar"/>
+        <lang.formatter
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleFormattingModelBuilder"/>
+        <codeStyleSettingsProvider implementation="com.language.sdk.PurpleCodeStyleSettingsProvider"/>
+        <langCodeStyleSettingsProvider implementation="com.language.sdk.PurpleLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleCommenter"/>
     </extensions>
 
     <actions>
