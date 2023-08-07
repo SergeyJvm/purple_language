@@ -50,6 +50,7 @@
         <lang.psiStructureViewFactory
             language="Purple"
             implementationClass="com.language.sdk.PurpleStructureViewFactory"/>
+        <navbar implementation="com.language.sdk.PurpleStructureAwareNavbar"/>
     </extensions>
 
     <actions>
