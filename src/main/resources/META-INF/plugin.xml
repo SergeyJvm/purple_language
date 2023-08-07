@@ -46,6 +46,7 @@
         <lang.foldingBuilder
             language="JAVA"
             implementationClass="com.language.sdk.PurpleFoldingBuilder"/>
+        <gotoSymbolContributor implementation="com.language.sdk.PurpleChooseByNameContributor"/>
     </extensions>
 
     <actions>
