@@ -7,6 +7,7 @@ import com.language.psi.PurpleProperty;
 import com.language.sdk.psi.PurpleFile;
 
 public class PurpleElementFactory {
+
     public static PurpleProperty createProperty(Project project, String name) {
         final PurpleFile file = createFile(project, name);
         return (PurpleProperty) file.getFirstChild();

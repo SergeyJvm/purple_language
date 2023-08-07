@@ -1,8 +1,6 @@
 // This is a generated file. Not intended for manual editing.
 package com.language.sdk.psi.impl;
 
-import java.util.List;
-
 import com.language.sdk.PurpleNamedElementImpl;
 import org.jetbrains.annotations.*;
 import com.intellij.lang.ASTNode;
@@ -56,6 +54,5 @@ public class PurplePropertyImpl extends PurpleNamedElementImpl implements Purple
   public ItemPresentation getPresentation() {
     return PurplePsiImplUtil.getPresentation(this);
   }
-
 
 }
