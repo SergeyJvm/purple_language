@@ -40,6 +40,9 @@
         <lang.refactoringSupport
             language="Purple"
             implementationClass="com.language.sdk.PurpleRefactoringSupportProvider"/>
+        <lang.findUsagesProvider
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleFindUsagesProvider"/>
     </extensions>
 
     <actions>
