@@ -43,6 +43,13 @@
         <lang.findUsagesProvider
             language="Purple"
             implementationClass="com.language.sdk.PurpleFindUsagesProvider"/>
+        <lang.foldingBuilder
+            language="JAVA"
+            implementationClass="com.language.sdk.PurpleFoldingBuilder"/>
+        <gotoSymbolContributor implementation="com.language.sdk.PurpleChooseByNameContributor"/>
+        <lang.psiStructureViewFactory
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleStructureViewFactory"/>
     </extensions>
 
     <actions>
