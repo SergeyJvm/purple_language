@@ -51,6 +51,9 @@
             language="Purple"
             implementationClass="com.language.sdk.PurpleStructureViewFactory"/>
         <navbar implementation="com.language.sdk.PurpleStructureAwareNavbar"/>
+        <lang.formatter
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleFormattingModelBuilder"/>
     </extensions>
 
     <actions>
