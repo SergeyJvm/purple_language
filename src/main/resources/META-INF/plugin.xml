@@ -56,6 +56,9 @@
             implementationClass="com.language.sdk.PurpleFormattingModelBuilder"/>
         <codeStyleSettingsProvider implementation="com.language.sdk.PurpleCodeStyleSettingsProvider"/>
         <langCodeStyleSettingsProvider implementation="com.language.sdk.PurpleLanguageCodeStyleSettingsProvider"/>
+        <lang.commenter
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleCommenter"/>
     </extensions>
 
     <actions>
