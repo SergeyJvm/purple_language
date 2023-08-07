@@ -59,6 +59,13 @@
         <lang.commenter
             language="Purple"
             implementationClass="com.language.sdk.PurpleCommenter"/>
+        <lang.documentationProvider
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleDocumentationProvider"/>
+        <spellchecker.support
+            language="Purple"
+            implementationClass="com.language.sdk.PurpleSpellcheckingStrategy"/>
+
     </extensions>
 
     <actions>
