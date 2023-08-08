@@ -20,6 +20,17 @@ intellij {
     plugins = ['com.intellij.java']
 }
 
+dependencies.testImplementation('junit:junit:4.4')
+
+test {
+    systemProperty "idea.home.path", "/path/to/intellij-community-sources"
+    java {
+        toolchain {
+            languageVersion = JavaLanguageVersion.of(11)
+        }
+    }
+}
+
 patchPluginXml {
     changeNotes = """
       Add change notes here.<br>
